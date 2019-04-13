@@ -8,8 +8,8 @@ const forecast = (latitude, longitude, callback)=>{
         } else if (response.body.error) {
             callback('Unable to find the Location. Try another!', undefined)
         } else {
-           
-            callback(undefined, response.body.daily.data[0].summary + ' The temperature for the day is expected as '+ response.body.currently.temperature + '. There is a ' + response.body.currently.precipProbability+ ' % Precipitation Probablility.' )
+           //console.log(response.body.daily.data[0])
+            callback(undefined, response.body.daily.data[0].summary + ' The average temperature for the day is '+ response.body.currently.temperature + 'F. There is a ' + response.body.currently.precipProbability+ ' % precipitation probablility.' + ' Maximum temperature for the day will be ' + response.body.daily.data[0].temperatureHigh + 'F and minimum temperature will be ' + response.body.daily.data[0].temperatureLow + 'F. Have a nice day!')
         }
     })
 }
